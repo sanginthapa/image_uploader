@@ -22,7 +22,7 @@
     body: formData
   }); 
   alert('The file has been uploaded successfully.');
-  var name = $('#fileupload').val().replace(/C:\\fakepath\\/i, '');
+  var name = $('#fileupload').val().replace(/C:\\fakepath\\/i, 'upload/');
     alert(name);
   }
   </script>
