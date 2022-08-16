@@ -7,10 +7,12 @@
  </head> 
  <body>
   <!-- HTML5 Input Form Elements -->
-  <form action="#" method="post" enctype="multipart/form-data">
+  <div class="row my-5 text-center fs-3">
+  <form  action="#" method="post" enctype="multipart/form-data">
   <input id="fileupload" type="file" name="fileupload" onchange="uploadFile()"/> 
   <!-- <button id="upload-button" onclick="uploadFile()"> Upload </button> -->
 </form>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Ajax JavaScript File Upload Logic -->
   <script>
@@ -72,6 +74,7 @@ function refresh_page($time){
 <?php
 // display_image_in_folder();
 // refresh_page(5000);
+latest_modified_image()
 ?>
 
 <?php
@@ -86,6 +89,7 @@ function refresh_page($time){
         else
             return 1;
     }
+    function latest_modified_image(){
     $dirname = "upload/";
     $images = glob($dirname."*.jpg");
     usort($images, "mtimecmp");
@@ -95,6 +99,7 @@ function refresh_page($time){
         echo '<div class="col mb-3"><img class="w-100" src="'.$image.'"s/><br /></div>';
     }
     echo '</div>';
+    }
 ?>
 
 
